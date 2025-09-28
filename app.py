@@ -1,3 +1,9 @@
+# --- THIS MUST BE THE FIRST THING IN YOUR SCRIPT ---
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+# --- END OF FIX ---
+
 import streamlit as st
 from streamlit import spinner
 from streamlit.web.server.server import server_port_is_manually_set
@@ -96,4 +102,5 @@ if task_option=="Chat with Video" and "vector_store" in st.session_state:
         with st.chat_message('assistant'):
            response= rag_answer(prompt,st.session_state.vector_store)
            st.write(response)
+
         st.session_state.messages.append({'role': 'assistant', 'content':response})
