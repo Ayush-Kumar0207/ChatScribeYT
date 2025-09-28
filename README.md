@@ -103,13 +103,10 @@ Follow these steps to set up and run the project on your local machine.
 ---
 
 ## 📁 File Structure
+```
 .
 ├── app.py              # Main Streamlit application UI and flow
 ├── supporting_functions.py # Core logic for transcription, AI tasks, and RAG
 ├── requirements.txt    # Project dependencies
 └── .env                # For storing API keys (not committed to Git)
----
-
-## 📄 License
-
-This project is licensed under the MIT License.
+```
